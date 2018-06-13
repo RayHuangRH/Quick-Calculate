@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Quick Calculate</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<h1>Chrome Calculator</h1>
+		Enter a simple expression: <input type="text" id="equation"></input>
+		<input type="button" id="calc" value="Submit"/>
+		<h3>Current Equation</h3>
+		<p id="currentEq">None</p>
+		<h3>Solution</h3><p id="solution"></p>
+		<div class="popup">
+			<input type="button" id="popupInfo" value="Solution History"/>
+			<span class="popuptext" id="history">
+				<table style="width:100%" class="table">
+					<tr>
+						<th>Equation</th>
+						<th>Solution</th>
+					</tr>
+					<tr>		
+						<td id="eq1"></td>
+						<td id="ans1"></td>
+					</tr>
+					<tr>		
+						<td id="eq2"></td>
+						<td id="ans2"></td>
+					</tr>
+					<tr>		
+						<td id="eq3"></td>
+						<td id="ans3"></td>
+					</tr>
+					<tr>		
+						<td id="eq4"></td>
+						<td id="ans4"></td>
+					</tr>
+					<tr>		
+						<td id="eq5"></td>
+						<td id="ans5"></td>
+					</tr>
+				</table>
+			</span>
+		</div>
+		<script src="popup.js"></script>
+		<script src="history.js"></script>
+		<script src="math.js"></script>
+	</body>
+
+</html>
+

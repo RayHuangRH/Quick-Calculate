@@ -1,0 +1,27 @@
+{
+	"manifest_version": 2,
+	"name": "Chrome Calculator",
+	"description": "Allows user to do simple math within the Chrome browser",
+	"version": "1.0",
+	"icons":{
+	"16": "icon16.png",
+	"48": "icon48.png",
+	"128": "icon128.png"
+	},
+	"browser_action": {
+		"default_icon": "icon128.png",
+		"default_popup": "popup.html"
+	},
+	"background": {
+		"scripts": [
+		"eventpage.js",
+		"math.js"
+		],
+		"persistent":false
+	},
+	"permissions": [
+		"notifications",
+		"storage",
+		"contextMenus"
+	]
+}

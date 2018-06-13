@@ -1,0 +1,29 @@
+document.addEventListener('DOMContentLoaded', function() {
+	load();
+	var history = document.getElementById("popupInfo");
+	history.addEventListener('click', function(){
+		var popup = document.getElementById("history");
+		popup.classList.toggle("show");
+	});
+	var calc = document.getElementById("calc");
+	calc.addEventListener('click', function() {
+		var newEquation = document.getElementById("equation").value;
+		var tf = checkEquation(newEquation);
+		if (Boolean(tf)) {
+			eqReformat(newEquation);
+			document.getElementById("currentEq").innerHTML = newEquation;
+			chrome.storage.sync.set({
+				'equation' : newEquation
+			});
+			newEquation = unary(newEquation);
+			newEquation = convert(newEquation);
+			var result = evaluate(newEquation);
+			document.getElementById("solution").innerHTML = result;
+			chrome.storage.sync.set({
+				'result' : result
+			});
+			notify(result);
+			ansReformat(result);
+		}
+	});
+});
