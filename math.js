@@ -30,23 +30,6 @@ function unary(str) {
 	return result;
 }
 
-function checkEquation(newEquation) {
-	var chars = " x()0123456789+-/*^.";
-	for (var i = 0; i < newEquation.length; i++) {
-		if (chars.indexOf(newEquation.charAt(i)) == -1) {
-			var notifOptions = {
-				type : "basic",
-				iconUrl : "icon48.png",
-				title : "Error!",
-				message : "Invalid Expression."
-			};
-			chrome.notifications.create('errorNotif', notifOptions);
-			return false;
-		}
-	}
-	return true;
-}
-
 function operate(c) {
 	switch (c) {
 	case '+':
@@ -80,18 +63,8 @@ function convert(str) {
 		} else if (c == ')') {
 			while (stack.length != 0 && stack[stack.length - 1] != '(') {
 				result += stack.pop();
-				if (stack.length != 0 && stack[stack.length - 1] != '(' && stack[stack.length - 1] != '$') {
-					var notifOptions = {
-						type : "basic",
-						iconUrl : "icon48.png",
-						title : "Error!",
-						message : "Syntax Error"
-					};
-					chrome.notifications.create('errorNotif', notifOptions);
-				} else {
-					stack.pop();
-				}
 			}
+			stack.pop();
 		} else {
 			while (stack.length != 0
 					&& operate(c) <= operate(stack[stack.length - 1])) {

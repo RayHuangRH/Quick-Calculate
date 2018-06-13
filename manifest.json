@@ -15,7 +15,8 @@
 	"background": {
 		"scripts": [
 		"eventpage.js",
-		"math.js"
+		"math.js",
+		"exception.js"
 		],
 		"persistent":false
 	},
