@@ -1,14 +1,36 @@
+body{
+	min-width:200px;
+	font-family:"Brandon Grotesque", Sans-serif;
+}
+
+.text{
+	width:195px;
+}
+
 h1{
 	text-align:center;
+}
+
+h3{
+	border-bottom-style:solid;
 }
 
 td{
 	text-align:center;
 }
 
+.button{
+	color:white;
+	background-color: #555555;
+	text-allign: center;
+	padding: 5px 12px;
+	margin: 4px 2px;
+	border: none;
+}
+
 table, th, td{
-	font-size:8px;
-	border: 1px solid grey;
+	font-size:10px;
+	border: 2px solid grey;
 	border-collapse: collapse;
 }
 
@@ -20,7 +42,7 @@ table, th, td{
 
 .popup .popuptext {
     visibility: hidden;
-    width: 170px;
+    width: 190px;
     background-color: #555;
     color: #fff;
     text-align: center;

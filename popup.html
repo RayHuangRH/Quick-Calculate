@@ -6,13 +6,13 @@
 	</head>
 	<body>
 		<h1>Chrome Calculator</h1>
-		Enter a simple expression: <input type="text" id="equation"></input>
-		<input type="button" id="calc" value="Submit"/>
+		Enter a simple expression: <input type="text" class="text" id="equation"></input>
+		<input type="button" class="button" id="calc" value="Submit"/>
 		<h3>Current Equation</h3>
 		<p id="currentEq">None</p>
 		<h3>Solution</h3><p id="solution"></p>
 		<div class="popup">
-			<input type="button" id="popupInfo" value="Solution History"/>
+			<input type="button" class="button" id="popupInfo" value="Solution History"/>
 			<span class="popuptext" id="history">
 				<table style="width:100%" class="table">
 					<tr>
@@ -42,9 +42,11 @@
 				</table>
 			</span>
 		</div>
+		<input type="button" class="button" id="options" value="Options"/>
 		<script src="popup.js"></script>
 		<script src="history.js"></script>
 		<script src="math.js"></script>
+		<script src="exception.js"></script>
 	</body>
 
 </html>
