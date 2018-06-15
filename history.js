@@ -1,3 +1,6 @@
+/*Records and stores last 5 equations 
+ * Adds new equation to Solution History popup and discards oldest equation
+ */
 function eqReformat(equation) {
 	var str1 = "eq5";
 	var str2 = "eq4";
@@ -14,6 +17,9 @@ function eqReformat(equation) {
 	document.getElementById("eq1").innerHTML = equation;
 }
 
+/*Records and stores last 5 solutions
+ * Adds new solution to Solution History popup and discards oldest solution
+ */
 function ansReformat(answer) {
 	var str1 = "ans5";
 	var str2 = "ans4";
@@ -31,6 +37,7 @@ function ansReformat(answer) {
 	record();
 }
 
+//Stores equation and solution history into chrome.sync.storage
 function record() {
 	chrome.storage.sync.set({
 		'eq1' : document.getElementById("eq1").innerHTML
@@ -64,6 +71,7 @@ function record() {
 	});
 }
 
+//retrieves solution and equation history from chrome.sync.storage
 function load(){
 	chrome.storage.sync.get('equation', function(math) {
 		document.getElementById("currentEq").innerHTML = math.equation;

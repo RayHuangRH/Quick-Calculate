@@ -1,3 +1,7 @@
+/*Determines when '-' is a for a negative number or subtraction
+ *Replaces x with * for multiplication
+ * Inserts * between integer and parentheses for distribution Ex: 2(3+5)
+ */
 function unary(str) {
 	var result = "";
 	for (var i = 0; i < str.length; i++) {
@@ -30,6 +34,9 @@ function unary(str) {
 	return result;
 }
 
+/*Determines precedence for operators 
+ */
+
 function operate(c) {
 	switch (c) {
 	case '+':
@@ -46,6 +53,9 @@ function operate(c) {
 	return -1;
 }
 
+/*Converts from expression from infix to postfix
+ * Returns postfix expression
+ */
 function convert(str) {
 	var result = "";
 	var stack = [];
@@ -82,6 +92,9 @@ function convert(str) {
 	return result;
 }
 
+/*Evaluates postfix expression and returns the solution of the expression
+ * 
+ */
 function evaluate(str) {
 	var stack = [];
 	for (var i = 0; i < str.length; i++) {
@@ -129,6 +142,9 @@ function evaluate(str) {
 	return stack.pop();
 }
 
+/*Notification method for solution of expression
+ * 
+ */
 function notify(result){
 	var message = result+"";
 	var options ={

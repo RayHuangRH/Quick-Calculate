@@ -1,3 +1,4 @@
+//Checks expression for invalid characters
 function checkEquation(newEquation) {
 	var chars = " x()0123456789+-/*^.";
 	if(newEquation.length==0){
@@ -13,6 +14,7 @@ function checkEquation(newEquation) {
 	return true;
 }
 
+//Checks expression to see if parentheses are paired properly
 function checkParen(newEquation){
 	var stack = [];
 	for(var i = 0;i<newEquation.length;i++){
@@ -34,6 +36,7 @@ function checkParen(newEquation){
 	return true;	
 }
 
+//Method for error notification
 function errorNotif(){
 	var notifOptions = {
 			type : "basic",
