@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	var calc = document.getElementById("calc");
 	calc.addEventListener('click', function() {
 		var newEquation = document.getElementById("equation").value;
-		var tf = checkEquation(newEquation) && checkParen(newEquation);
+		var tf = checkEquation(newEquation) && checkParen(newEquation) && opCheck(newEquation);
 		if (Boolean(tf)) {
 			eqReformat(newEquation);
 			document.getElementById("currentEq").innerHTML = newEquation;
