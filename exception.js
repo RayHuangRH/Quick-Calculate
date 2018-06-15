@@ -54,6 +54,12 @@ function opCheck(newEquation){
 		else if("+-*^/".indexOf(c)!=-1){
 			operator++;
 		}
+		else if(c=='$'){
+			if(i+1>=newEquation.length||newEquation.charAt(i+1)=='$'){
+				errorNotif();
+				return false;
+			}
+		}
 	}
 	if(operator<operand){
 		return true;
